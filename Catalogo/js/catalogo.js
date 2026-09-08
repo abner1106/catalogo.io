@@ -8,11 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
             id: 1,
             nombre: 'DarkComet RAT',
             tipo: 'control',
-            descripcion: 'Control remoto avanzado con captura de pantalla, keylogging y acceso a webcam. Usado en ciberespionaje. Permite administrar archivos, ejecutar comandos y grabar audio/micrófono. Es altamente configurable y difícil de detectar.',
+            descripcion: 'Control remoto avanzado con captura de pantalla, keylogging y acceso a webcam. Usado en ciberespionaje. Permite administrar archivos, ejecutar comandos y grabar audio/micrófono. Es highly configurable y difícil de detectar.',
             icono: 'images/rat.png',
             emoji: '🕹️',
             impacto: 'Alto · Espionaje',
-            enlace: 'https://www.malwarebytes.com/blog/news/2012/06/you-dirty-rat-part-1-darkcomet'
+            enlace: 'https://www.malwarebytes.com/blog/news/2012/06/you-dirty-rat-part-1-darkcomet',
+            video: 'https://www.youtube.com/watch?v=Q9PNaYtUMyg'
         },
         {
             id: 2,
@@ -22,7 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
             icono: 'images/backdoor.png',
             emoji: '🔓',
             impacto: 'Crítico · Robo de datos',
-            enlace: 'https://attack.mitre.org/software/S0385/'
+            enlace: 'https://attack.mitre.org/software/S0385/',
+            video: 'https://www.youtube.com/watch?v=kwLOVVwT8ak'
         },
         {
             id: 3,
@@ -32,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
             icono: 'images/rootkit.png',
             emoji: '👻',
             impacto: 'Persistente · Invisible',
-            enlace: 'https://www.welivesecurity.com/la-es/2018/09/27/lojax-primer-rootkit-uefi-en-uso-cortesia-grupo-sednit/'
+            enlace: 'https://www.welivesecurity.com/la-es/2018/09/27/lojax-primer-rootkit-uefi-en-uso-cortesia-grupo-sednit/',
+            video: 'https://www.youtube.com/watch?v=Lb3Q-CkXfVw'
         },
         {
             id: 4,
@@ -42,7 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
             icono: 'images/file.png',
             emoji: '🌀',
             impacto: 'Sigiloso · Difícil de rastrear',
-            enlace: 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-320a'
+            enlace: 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-320a',
+            video: 'https://www.youtube.com/watch?v=1-FyyhpW-t8'
         },
         {
             id: 5,
@@ -52,7 +56,8 @@ document.addEventListener('DOMContentLoaded', () => {
             icono: 'images/ransomware.png',
             emoji: '💀',
             impacto: 'Catastrófico · Extorsión',
-            enlace: 'https://www.kaspersky.com/resource-center/threats/ransomware-wannacry'
+            enlace: 'https://www.kaspersky.com/resource-center/threats/ransomware-wannacry',
+            video: 'https://www.youtube.com/watch?v=aAfuNn2URng'
         },
         {
             id: 6,
@@ -62,7 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
             icono: 'images/lockbit.png',
             emoji: '🔐',
             impacto: 'Severo · Parálisis empresarial',
-            enlace: 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-075a'
+            enlace: 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-075a',
+            video: 'https://www.youtube.com/watch?v=rdXBVL9gSFQ'
         },
         {
             id: 7,
@@ -72,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
             icono: 'images/poisonivy.png',
             emoji: '🐍',
             impacto: 'Alto · Exfiltración',
-            enlace: 'https://attack.mitre.org/software/S0017/'
+            enlace: 'https://attack.mitre.org/software/S0017/',
+            video: 'https://www.youtube.com/watch?v=U2Y88kw8WVw'
         },
         {
             id: 8,
@@ -82,7 +89,8 @@ document.addEventListener('DOMContentLoaded', () => {
             icono: 'images/stuxnet.png',
             emoji: '⚙️',
             impacto: 'Crítico · Sabotaje industrial',
-            enlace: 'https://www.kaspersky.com/resource-center/definitions/what-is-stuxnet'
+            enlace: 'https://www.kaspersky.com/resource-center/definitions/what-is-stuxnet',
+            video: 'https://www.youtube.com/watch?v=_X2QMtQkh3M'
         }
     ];
 
@@ -129,7 +137,11 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>` : ''
                     }
                     <span class="impacto"><i class="fas fa-exclamation-triangle"></i> ${item.impacto}</span>
-                    ${item.enlace ? `<a href="${item.enlace}" target="_blank" rel="noopener noreferrer" class="enlace-externo"><i class="fas fa-external-link-alt"></i> Más información</a>` : ''}
+                    
+                    <div class="acciones-card" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 1rem;">
+                        ${item.enlace ? `<a href="${item.enlace}" target="_blank" rel="noopener noreferrer" class="enlace-externo"><i class="fas fa-external-link-alt"></i> Información</a>` : ''}
+                        ${item.video ? `<a href="${item.video}" target="_blank" rel="noopener noreferrer" class="enlace-externo enlace-video" style="background: rgba(255, 0, 0, 0.15); color: #ff4d4d; border: 1px solid rgba(255, 0, 0, 0.3);"><i class="fab fa-youtube"></i> Ver Video</a>` : ''}
+                    </div>
                 </div>
             `;
         });
