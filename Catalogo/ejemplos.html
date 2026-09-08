@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Guía de defensa, evasión y casos de estudio de ciberseguridad de MalwareCat." />
+    <title>Guía y casos · MalwareCat</title>
+    <link rel="icon" type="image/png" href="images/hack.png" />
+    <link rel="stylesheet" href="css/ejemplos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <main class="guia-app">
+        <nav class="guia-nav" aria-label="Navegación principal">
+            <a class="marca" href="index.html"><img src="images/logo.png"
+                    alt="MalwareCat" /><span>Malware<span>Cat</span></span></a>
+            <a class="volver boton-regreso" href="index.html"><i class="fas fa-arrow-left"></i> Regresar al índice</a>
+        </nav>
+
+        <header class="guia-hero">
+            <div class="hero-copy">
+                <span class="eyebrow"><i class="fas fa-signal"></i> Centro de consulta ITVO</span>
+                <h1>Defender es<br /><em>entender el contexto.</em></h1>
+                <p>Una guía visual para reconocer señales, elegir herramientas y estudiar incidentes sin confundir una
+                    hipótesis con un hecho.</p>
+                <div class="hero-actions"><a href="#defensa" class="accion-principal">Explorar la guía <i
+                            class="fas fa-arrow-down"></i></a><span class="hero-note"><i class="fas fa-lock"></i> Solo
+                        análisis autorizado</span></div>
+            </div>
+            <div class="hero-signal" aria-label="Resumen de la guía">
+                <div class="signal-orbit"></div>
+                <div class="signal-core"><img src="images/logo.png" alt="" /><span>ITVO<br />SECURITY</span></div>
+                <div class="signal-tag tag-one">01 · OBSERVA</div>
+                <div class="signal-tag tag-two">02 · CONTRASTA</div>
+                <div class="signal-tag tag-three">03 · CONTIENE</div>
+            </div>
+        </header>
+
+        <section class="section-block" id="defensa">
+            <div class="section-heading">
+                <div><span class="eyebrow">01 / Kit de respuesta</span>
+                    <h2>Recomendaciones &amp; Evasión</h2>
+                </div>
+                <p>Elige controles concretos para cada momento: identificar, investigar y reducir el impacto.</p>
+            </div>
+            <div class="tool-grid">
+                <article class="tool-card tool-card-main">
+                    <div class="card-number">A</div>
+                    <div class="tool-icon green"><img src="images/wire.webp" alt="Logo de Wireshark" /></div>
+                    <h3>Herramientas de defensa</h3>
+                    <p>Instrumentos para observar el sistema, encontrar patrones y crear evidencia útil.</p>
+                    <ul>
+                        <li><img class="tool-logo" src="images/wire.webp"
+                                alt="" /><strong>Wireshark</strong><span>Análisis de tráfico</span></li>
+                        <li><img class="tool-logo" src="images/sys.png"
+                                alt="" /><strong>Sysinternals</strong><span>Monitorización de procesos</span></li>
+                        <li><img class="tool-logo" src="images/clam.png" alt="" /><strong>ClamAV</strong><span>Antivirus
+                                open-source</span></li>
+                        <li><img class="tool-logo" src="images/yara.webp" alt="" /><strong>YARA</strong><span>Detección
+                                por reglas</span></li>
+                    </ul>
+                </article>
+                <article class="tool-card tool-card-main">
+                    <div class="card-number">B</div>
+                    <div class="tool-icon orange"><img src="images/power.png" alt="Logo de PowerShell" /></div>
+                    <h3>Técnicas de evasión</h3>
+                    <p>Señales frecuentes que un analista debe reconocer para no perder visibilidad.</p>
+                    <ul>
+                        <li><strong>Ofuscación</strong><span>PowerShell, JS</span></li>
+                        <li><strong>Ejecución en memoria</strong><span>Fileless</span></li>
+                        <li><strong>Servicios legítimos</strong><span>Dominios y nube</span></li>
+                        <li><strong>Firmware rootkits</strong><span>UEFI</span></li>
+                    </ul>
+                </article>
+                <article class="tool-card tool-card-main">
+                    <div class="card-number">C</div>
+                    <div class="tool-icon blue"><img src="images/back.png" alt="Icono de copias de seguridad" /></div>
+                    <h3>Buenas prácticas</h3>
+                    <p>Medidas sencillas que disminuyen la superficie de ataque antes de una crisis.</p>
+                    <ul>
+                        <li><strong>Actualizar</strong><span>Sistemas y parches</span></li>
+                        <li><strong>Mínimo privilegio</strong><span>Menos alcance</span></li>
+                        <li><strong>Backups offline</strong><span>Restauración probada</span></li>
+                        <li><strong>Monitoreo SIEM</strong><span>Alertas continuas</span></li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block ruta-section">
+            <div class="section-heading">
+                <div><span class="eyebrow">02 / Método ITVO</span>
+                    <h2>De alerta a evidencia</h2>
+                </div>
+                <p>Una secuencia breve para que el análisis sea repetible y defendible.</p>
+            </div>
+            <div class="ruta-grid">
+                <article><span>01</span><i class="fas fa-magnifying-glass-chart"></i>
+                    <h3>Identifica</h3>
+                    <p>Delimita el incidente antes de tocar la evidencia. Registra origen, fecha, equipo, usuario, hash y
+                        síntomas observados.</p>
+                    <strong class="paso-resultado">Resultado: una ficha inicial sin alterar la muestra.</strong>
+                </article>
+                <article><span>02</span><i class="fas fa-code-compare"></i>
+                    <h3>Contrasta</h3>
+                    <p>Compara dominios, IP, hashes y comportamientos con MITRE ATT&amp;CK, VirusTotal y fuentes
+                        institucionales. Separa hechos, indicios y suposiciones.</p>
+                    <strong class="paso-resultado">Resultado: hipótesis priorizadas y respaldadas.</strong>
+                </article>
+                <article><span>03</span><i class="fas fa-hand-holding-medical"></i>
+                    <h3>Contiene</h3>
+                    <p>Aísla el activo sin apagarlo innecesariamente, conserva registros, bloquea indicadores y revoca
+                        accesos comprometidos. Después restaura desde respaldos probados y comunica el alcance.</p>
+                    <strong class="paso-resultado">Resultado: impacto limitado y recuperación verificable.</strong>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-block web-section" id="seguridad-web">
+            <div class="section-heading">
+                <div><span class="eyebrow">03 / Aplicaciones web</span>
+                    <h2>Protege la aplicación en el borde</h2>
+                </div>
+                <p>Un firewall de aplicaciones web filtra solicitudes antes de que lleguen al servidor, pero no
+                    reemplaza parches, autenticación ni una revisión segura del código.</p>
+            </div>
+            <div class="web-grid">
+                <article class="web-card">
+                    <div class="web-card-head"><span class="web-logo-slot"><img src="images/akamai.png"
+                                alt="Logo de Akamai" onerror="this.style.display='none'" /></span><span>CDN · WAF ·
+                            Edge</span></div>
+                    <h3>Akamai App &amp; API Protector</h3>
+                    <p>Combina red de distribución, protección contra bots y reglas para aplicaciones y APIs. Es útil
+                        cuando se necesita absorber tráfico en el borde y aplicar controles antes del origen.</p>
+                    <div class="web-example"><strong>Ejemplo</strong><span>Bloquear una ráfaga de solicitudes al
+                            endpoint de inicio de sesión y permitir el tráfico legítimo con límites por identidad, IP o
+                            comportamiento.</span></div>
+                </article>
+                <article class="web-card">
+                    <div class="web-card-head"><span class="web-logo-slot"><img src="images/cloud.png"
+                                alt="Logo de Cloudflare" onerror="this.style.display='none'" /></span><span>WAF · DDoS ·
+                            Zero Trust</span></div>
+                    <h3>Cloudflare WAF</h3>
+                    <p>Permite aplicar reglas administradas y personalizadas, limitar tasas, filtrar bots y proteger
+                        servicios publicados detrás de su red global.</p>
+                    <div class="web-example"><strong>Ejemplo</strong><span>Crear una regla que desafíe solicitudes
+                            anómalas a <code>/api/login</code> y registrar el evento sin bloquear de inmediato todo el
+                            país.</span></div>
+                </article>
+                <article class="web-card">
+                    <div class="web-card-head"><span class="web-logo-slot"><img src="images/mod.png"
+                                alt="Logo de ModSecurity" onerror="this.style.display='none'" /></span><span>WAF · Open
+                            source</span></div>
+                    <h3>ModSecurity + OWASP CRS</h3>
+                    <p>Un WAF instalable junto al servidor web que usa el Core Rule Set de OWASP para detectar patrones
+                        como inyección SQL, XSS y traversal.</p>
+                    <div class="web-example"><strong>Ejemplo</strong><span>Comenzar en modo detección, revisar falsos
+                            positivos y pasar a bloqueo sólo después de ajustar las reglas para la aplicación.</span>
+                    </div>
+                </article>
+            </div>
+            <div class="web-flow">
+                <div class="flow-title"><span class="eyebrow">Caso práctico</span>
+                    <h3>Una solicitud segura, paso a paso</h3>
+                </div>
+                <div class="flow-steps">
+                    <div><span>01</span><strong>Cliente</strong>
+                        <p>HTTPS y autenticación envían la solicitud.</p>
+                    </div><i class="fas fa-arrow-right"></i>
+                    <div><span>02</span><strong>WAF / CDN</strong>
+                        <p>Revisa reputación, tasa, reglas y patrón.</p>
+                    </div><i class="fas fa-arrow-right"></i>
+                    <div><span>03</span><strong>Origen</strong>
+                        <p>La aplicación procesa sólo tráfico permitido.</p>
+                    </div><i class="fas fa-arrow-right"></i>
+                    <div><span>04</span><strong>Registro</strong>
+                        <p>SIEM recibe evento, contexto y respuesta.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block recomendaciones-web" id="recomendaciones-web">
+            <div class="section-heading">
+                <div><span class="eyebrow">04 / Protección diaria</span>
+                    <h2>Recomendaciones de seguridad web</h2>
+                </div>
+                <p>Pequeñas decisiones técnicas y hábitos de navegación reducen muchas de las rutas más comunes de
+                    ataque.</p>
+            </div>
+            <div class="recomendacion-grid">
+                <article class="recomendacion-card">
+                    <div class="recomendacion-visual"><img src="images/pass.png" alt="Seguridad de contraseñas"
+                            onerror="this.style.display='none'" /></div>
+                    <span class="recomendacion-tag">Cuentas</span>
+                    <h3>Contraseñas y MFA</h3>
+                    <p>Usa una contraseña única y larga para cada servicio, un administrador de contraseñas y
+                        autenticación multifactor. Nunca compartas códigos temporales ni los guardes en capturas.</p>
+                    <ul>
+                        <li>Activa MFA resistente al phishing cuando esté disponible.</li>
+                        <li>Revisa sesiones abiertas y revoca dispositivos desconocidos.</li>
+                        <li>Guarda códigos de recuperación fuera del correo principal.</li>
+                    </ul>
+                </article>
+                <article class="recomendacion-card">
+                    <div class="recomendacion-visual"><img src="images/inyec.png" alt="Prevención de inyección SQL"
+                            onerror="this.style.display='none'" /></div>
+                    <span class="recomendacion-tag">Desarrollo</span>
+                    <h3>Prevén la inyección SQL</h3>
+                    <p>La entrada del usuario nunca debe convertirse directamente en una consulta. Usa consultas
+                        preparadas, validación del lado del servidor y cuentas de base de datos con privilegios mínimos.
+                    </p>
+                    <ul>
+                        <li>Usa consultas parametrizadas u ORM correctamente configurado.</li>
+                        <li>No muestres errores SQL ni credenciales en respuestas.</li>
+                        <li>Prueba con SAST, DAST y datos de laboratorio autorizados.</li>
+                    </ul>
+                </article>
+                <article class="recomendacion-card">
+                    <div class="recomendacion-visual"><img src="images/pishin.png" alt="Detección de phishing"
+                            onerror="this.style.display='none'" /></div>
+                    <span class="recomendacion-tag">Navegación</span>
+                    <h3>Reconoce páginas clonadas</h3>
+                    <p>El phishing imita bancos, tiendas o servicios conocidos para robar credenciales. No basta con que
+                        el diseño se vea igual: verifica dominio, HTTPS, contexto y el origen del enlace.</p>
+                    <ul>
+                        <li>Escribe manualmente la dirección de servicios sensibles.</li>
+                        <li>Desconfía de urgencia, premios o amenazas de bloqueo.</li>
+                        <li>Reporta la página y cambia la contraseña si la introdujiste.</li>
+                    </ul>
+                </article>
+                <article class="recomendacion-card">
+                    <div class="recomendacion-visual"><img src="images/securyty.png" alt="Seguridad de aplicaciones web"
+                            onerror="this.style.display='none'" /></div>
+                    <span class="recomendacion-tag">Aplicaciones</span>
+                    <h3>Protege toda la superficie</h3>
+                    <p>La seguridad web combina código, infraestructura, identidades, dependencias y monitoreo. Un WAF
+                        ayuda, pero no corrige una vulnerabilidad lógica ni una contraseña expuesta.</p>
+                    <ul>
+                        <li>Actualiza frameworks, plugins y dependencias.</li>
+                        <li>Configura CSP, HSTS, cookies Secure y HttpOnly.</li>
+                        <li>Registra alertas sin almacenar tokens ni datos sensibles.</li>
+                    </ul>
+                </article>
+            </div>
+            <div class="seguridad-checklist"><strong><i class="fas fa-list-check"></i> Antes de
+                    publicar</strong><span>¿MFA activo?</span><span>¿Consultas parametrizadas?</span><span>¿Dominio
+                    verificado?</span><span>¿Dependencias actualizadas?</span></div>
+        </section>
+
+        <section class="section-block casos-section" id="casos">
+            <div class="section-heading">
+                <div><span class="eyebrow">05 / Memoria operativa</span>
+                    <h2>Casos reales para pensar mejor</h2>
+                </div>
+                <p>Los detalles importan. Cambia de caso y observa qué se puede afirmar, qué falta comprobar y qué
+                    decisión deja.</p>
+            </div>
+            <div class="casos-layout">
+                <div class="casos-menu" role="tablist" aria-label="Casos de estudio"><button class="caso-boton activo"
+                        type="button" data-caso="coppel" role="tab"
+                        aria-selected="true"><span>01</span><strong>Coppel</strong><small>Incidente reportado ·
+                            2024</small></button><button class="caso-boton" type="button" data-caso="telcel" role="tab"
+                        aria-selected="false"><span>02</span><strong>Telcel</strong><small>Reportes públicos ·
+                            Contexto</small></button><button class="caso-boton" type="button" data-caso="wannacry"
+                        role="tab" aria-selected="false"><span>03</span><strong>WannaCry</strong><small>Ransomware ·
+                            2017</small></button><button class="caso-boton" type="button" data-caso="colonial"
+                        role="tab" aria-selected="false"><span>04</span><strong>Colonial
+                            Pipeline</strong><small>Ransomware · 2021</small></button></div>
+                <article class="caso-panel" id="casoPanel" aria-live="polite">
+                    <div class="caso-meta"><span id="casoTipo">Incidente reportado</span><span id="casoFecha">México ·
+                            2024</span></div>
+                    <h3 id="casoTitulo">Coppel: continuidad antes que especulación</h3>
+                    <p id="casoTexto">Durante 2024 se reportaron interrupciones en servicios y operaciones de Coppel
+                        asociadas públicamente con un incidente de ciberseguridad. La lección no es afirmar que una base
+                        de datos fue eliminada sin evidencia: es distinguir indisponibilidad, cifrado, pérdida y
+                        recuperación.</p>
+                    <div class="caso-leccion"><i class="fas fa-lightbulb"></i>
+                        <div><strong>Pregunta de laboratorio</strong>
+                            <p id="casoLeccion">¿Qué servicio dejó de operar? ¿Qué respaldo existía? ¿Qué indicador
+                                comprobaría cada hipótesis?</p>
+                        </div>
+                    </div><a id="casoFuente" class="fuente-link" href="https://www.coppel.com/" target="_blank"
+                        rel="noopener noreferrer">Consultar fuente institucional <i
+                            class="fas fa-arrow-up-right-from-square"></i></a>
+                </article>
+            </div>
+            <div class="disclaimer"><i class="fas fa-circle-info"></i><span>Los casos de Coppel y Telcel se presentan
+                    con cautela: los detalles públicos pueden ser incompletos. No se afirma eliminación de bases de
+                    datos ni atribución técnica sin una fuente verificable.</span></div>
+        </section>
+
+        <footer class="guia-footer"><span>MalwareCat · ITVO Seguridad en Aplicaciones Web</span><span>Aprender también
+                es saber verificar.</span></footer>
+    </main>
+    <script src="js/ejemplos.js"></script>
+</body>
+
+</html>

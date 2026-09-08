@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MalwareCat · ITVO Seguridad</title>
+    <link rel="icon" type="image/png" href="images/hack.png" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+
+<body>
+    <div class="app">
+
+        <header class="hero">
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <div class="logo-titulo">
+                        <img src="images/logo.png" alt="ITVO Seguridad" class="logo-img" />
+                        <h1 class="titulo-principal"><span>Malware </span>Cat😺-alogo</h1>
+                    </div>
+                    <p class="subtitulo">Catálogo interactivo · Seguridad en Aplicaciones Web</p>
+                    <div class="meta-info">
+                        <span class="badge"><i class="fas fa-tag"></i> Hecho por: Francisco Fermin y Abner Cruz</span>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="stats">
+                        <div class="stat-item"><span class="stat-num">8</span> Malware</div>
+                        <div class="stat-item"><span class="stat-num">3</span> Categorías</div>
+                        <div class="stat-item"><span class="stat-num">4</span> Casos</div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="barra-accion">
+            <nav class="filtros">
+                <button class="filtro-btn active" data-tipo="todos"><i class="fas fa-th"></i> Todos</button>
+                <button class="filtro-btn" data-tipo="control"><i class="fas fa-desktop"></i> Control</button>
+                <button class="filtro-btn" data-tipo="ocultamiento"><i class="fas fa-eye-slash"></i>
+                    Ocultamiento</button>
+                <button class="filtro-btn" data-tipo="impacto"><i class="fas fa-bolt"></i> Impacto</button>
+            </nav>
+            <div class="buscador">
+                <i class="fas fa-search"></i>
+                <input type="text" id="searchInput" placeholder="Buscar malware..." />
+            </div>
+            <a class="filtro-btn guia-link" href="ejemplos.html"><i class="fas fa-compass"></i> Abrir guía y casos</a>
+        </div>
+
+        <main class="catalogo-grid" id="catalogoGrid"></main>
+
+        <footer class="footer">
+            <p><i class="fas fa-lock"></i> ITVO · Seguridad en Aplicaciones Web · Catálogo interactivo</p>
+            <div class="footer-links">
+            </div>
+            <p class="small">Todos los recursos son referenciales · 2026</p>
+        </footer>
+    </div>
+
+    <script src="js/catalogo.js"></script>
+</body>
+
+</html>
