@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             impacto: 'Alto · Espionaje',
             enlace: 'https://www.malwarebytes.com/blog/news/2012/06/you-dirty-rat-part-1-darkcomet',
             video: 'https://www.youtube.com/watch?v=Q9PNaYtUMyg',
+            imagenEjemplo: 'images/NjRat-Ejemplo.jpg',
             detalles: {
                 año: '2008-2015',
                 autor: 'Desconocido',
@@ -57,6 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
             impacto: 'Crítico · Robo de datos',
             enlace: 'https://attack.mitre.org/software/S0385/',
             video: 'https://www.youtube.com/watch?v=kwLOVVwT8ak',
+            imagenEjemplo: 'images/USB-EJEMPLO.jpg',
             detalles: {
                 año: '2012-Presente',
                 autor: 'Njrat Team (Árabe)',
@@ -101,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
             impacto: 'Persistente · Invisible',
             enlace: 'https://www.welivesecurity.com/la-es/2018/09/27/lojax-primer-rootkit-uefi-en-uso-cortesia-grupo-sednit/',
             video: 'https://www.youtube.com/watch?v=Lb3Q-CkXfVw',
+            imagenEjemplo: 'images/UEFI-Ejemplo.webp',
             detalles: {
                 año: '2015-Presente',
                 autor: 'Grupo Sednit (APT28)',
@@ -143,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
             impacto: 'Sigiloso · Difícil de rastrear',
             enlace: 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa22-320a',
             video: 'https://www.youtube.com/watch?v=1-FyyhpW-t8',
+            imagenEjemplo: 'images/powerShellEjemplo.png',
             detalles: {
                 año: '2016-Presente',
                 autor: 'Múltiples actores de amenaza',
@@ -187,6 +191,7 @@ document.addEventListener('DOMContentLoaded', () => {
             impacto: 'Catastrófico · Extorsión',
             enlace: 'https://www.kaspersky.com/resource-center/threats/ransomware-wannacry',
             video: 'https://www.youtube.com/watch?v=aAfuNn2URng',
+            imagenEjemplo: 'images/ransomwareEjemplo.png',
             detalles: {
                 año: '2017-Presente',
                 autor: 'Lazarus Group (Corea del Norte)',
@@ -233,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
             impacto: 'Severo · Parálisis empresarial',
             enlace: 'https://www.cisa.gov/news-events/cybersecurity-advisories/aa23-075a',
             video: 'https://www.youtube.com/watch?v=rdXBVL9gSFQ',
+            imagenEjemplo: 'images/lockbitEjemplo.jpg',
             detalles: {
                 año: '2019-Presente',
                 autor: 'LockBit Affiliate Network (Rusia)',
@@ -274,7 +280,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: 'Poison Ivy RAT',
             tipo: 'control',
             descripcion: 'Backdoor usado en ciberespionaje, control remoto total y exfiltración de información. Fue utilizado en ataques contra gobiernos y sectores estratégicos. Permite gestión de procesos y archivos.',
-            icono: 'images/poisonivy.png',
+            icono: 'images/gestion.jpg',
+            imagenEjemplo: 'images/gestion.jpg',
             emoji: '🐍',
             impacto: 'Alto · Exfiltración',
             enlace: 'https://attack.mitre.org/software/S0017/',
@@ -321,7 +328,8 @@ document.addEventListener('DOMContentLoaded', () => {
             nombre: 'Stuxnet (Rootkit)',
             tipo: 'ocultamiento',
             descripcion: 'Rootkit industrial que modifica PLCs y oculta su presencia. Ataque a infraestructura crítica (centrifugadoras nucleares). Es considerado el primer ciberarma conocido.',
-            icono: 'images/stuxnet.png',
+            icono: 'images/plcs.webp',
+            imagenEjemplo: 'images/plcs.webp',
             emoji: '⚙️',
             impacto: 'Crítico · Sabotaje industrial',
             enlace: 'https://www.kaspersky.com/resource-center/definitions/what-is-stuxnet',
@@ -500,6 +508,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>${item.descripcion}</p>
                     <div class="impacto-modal"><i class="fas fa-exclamation-triangle"></i> ${item.impacto}</div>
                 </div>
+
+                ${item.imagenEjemplo ? `
+                <div class="modal-ejemplo" style="margin: 1.5rem 0; padding: 1.5rem; background: rgba(79, 144, 209, 0.08); border-radius: 0.5rem; border: 1px solid rgba(79, 144, 209, 0.2);">
+                    <h3 style="margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-image"></i> Ejemplo</h3>
+                    <img src="${item.imagenEjemplo}" alt="Ejemplo de ${item.nombre}" style="max-width: 100%; height: auto; border-radius: 0.5rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);" loading="lazy" onerror="this.style.display='none'" />
+                </div>
+                ` : ''}
 
                 <div class="modal-detalles">
                     <h3>📋 Información Técnica Detallada</h3>
